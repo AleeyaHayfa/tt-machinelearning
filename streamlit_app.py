@@ -22,7 +22,7 @@ with st.expander('Data'): #expander tu drop down button
 with st.expander('Data Visualization'):
   st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
 
-# Data prepration
+# Data prepration (user input)
 with st.sidebar:
   st.header('Input features')
   island = st.selectbox('Island', ('Biscoe', 'Dream', 'Torgesen'))
@@ -34,4 +34,19 @@ with st.sidebar:
   body_mass_g = st.slider('Body mass (g)', 2700.0, 6300.0, 4207.0) 
   #"species","island","bill_length_mm","bill_depth_mm","flipper_length_mm","body_mass_g","sex"
 
-  
+ # user input into dataframe
+# Create a DataFrame for the input features
+  data = {'island': island,
+          'bill_length_mm': bill_length_mm,
+          'bill_depth_mm': bill_depth_mm,
+          'flipper_length_mm': flipper_length_mm,
+          'body_mass_g': body_mass_g,
+          'sex': gender}
+  input_df = pd.DataFrame(data, index=[0])
+  input_penguins = pd.concat([input_df, X_raw], axis=0) #combine input features with penguin features
+
+with st.expander('Input features'):
+  st.write('**Input penguin**')
+  input_df
+  st.write('**Combined penguins data**') #combine original dgn user input
+  input_penguins
