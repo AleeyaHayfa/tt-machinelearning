@@ -66,11 +66,28 @@ def target_encode(val):
   return target_mapper[val]
 
 y = y_raw.apply(target_encode)
-y
-y_raw #compare dgn original nk tgk betul ke tak
+#y #ni yang encoded
+#y_raw #compare dgn original nk tgk betul ke tak
 
 with st.expander('Data preparation'):
   st.write('**Encoded X (input penguin)**')
   input_row
   st.write('**Encoded y**')
   y
+  y_raw #compare dgn original nk tgk betul ke tak
+
+# Model training and inference
+## Train the ML model
+clf = RandomForestClassifier()
+clf.fit(X, y)
+
+## Apply model to make predictions
+prediction = clf.predict(input_row)
+prediction_proba = clf.predict_proba(input_row)
+
+df_prediction_proba = pd.DataFrame(prediction_proba)
+df_prediction_proba.columns = ['Adelie', 'Chinstrap', 'Gentoo']
+df_prediction_proba.rename(columns={0: 'Adelie',
+                                 1: 'Chinstrap',
+                                 2: 'Gentoo'})
+
