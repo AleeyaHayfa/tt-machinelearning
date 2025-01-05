@@ -103,6 +103,7 @@ st.dataframe(df_prediction_proba,
                  'Adelie',
                  format='%f',
                  width='medium',
+                 #probability (0-1)
                  min_value=0,
                  max_value=1
                ),
