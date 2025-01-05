@@ -86,6 +86,7 @@ clf.fit(x, y) #use fit function to train it
 ## Apply model to make predictions
 prediction = clf.predict(input_row) #predict value, input_row is input features
 prediction_proba = clf.predict_proba(input_row) #do probability
+prediction_proba
 
 df_prediction_proba = pd.DataFrame(prediction_proba)
 df_prediction_proba.columns = ['Adelie', 'Chinstrap', 'Gentoo']
