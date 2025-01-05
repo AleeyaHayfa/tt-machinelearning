@@ -25,4 +25,10 @@ with st.expander('Data Visualization'):
 # Data prepration
 with st.sidebar:
   st.header('Input features')
+  island = st.selectbox('Island', ('Biscoe', 'Dream', 'Torgesen'))
+  gender = st.selectbox('Gender', ('male', 'female'))
+  # 32.1 mininum, 59.6 maximum, 43.9 average
+  bill_length_mm = st.slider('Bill length(mm)', 32.1, 59.6, 43.9)
+  #"species","island","bill_length_mm","bill_depth_mm","flipper_length_mm","body_mass_g","sex"
+
   
