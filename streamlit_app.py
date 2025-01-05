@@ -57,7 +57,7 @@ with st.expander('Input features'):
 encode = ['island', 'sex'] #combine island and island name pastu classify 0 or 1 for each particular name
 df_penguins = pd.get_dummies(input_penguins, prefix=encode)
 
-X = df_penguins[1:] #ignore first row but use everything after first row
+x = df_penguins[1:] #ignore first row but use everything after first row
 input_row = df_penguins[:1] #use only first row
 
 # Encode y
