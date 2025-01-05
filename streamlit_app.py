@@ -18,4 +18,6 @@ with st.expander('Data'): #expander tu drop down button
   st.write('Y')
   Y = df.species
   Y
- 
+
+with st.expander('Data Visualization'):
+  st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
