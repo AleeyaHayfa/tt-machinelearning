@@ -12,12 +12,12 @@ with st.expander('Data'): #expander tu drop down button
   df
 
   st.write('**X**')
-  X_raw = df.drop('species', axis=1)
-  X_raw
+  x_raw = df.drop('species', axis=1)
+  x_raw
 
   st.write('Y')
-  Y_raw = df.species
-  Y_raw
+  y_raw = df.species
+  y_raw
 
 with st.expander('Data Visualization'):
   st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
