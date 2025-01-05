@@ -1,13 +1,10 @@
-# 📦 Streamlit App Starter Kit 
-```
-⬆️ (Replace above with your app's name)
-```
+# 🤖 ThinkTankers Machine Learning App
 
-Description of the app ...
+This is ThinkTankers Machine Learning app.
 
 ## Demo App
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://app-starter-kit.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://tt-machinelearning.streamlit.app/)
 
 ## GitHub Codespaces
 
