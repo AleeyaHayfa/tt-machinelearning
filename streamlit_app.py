@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+
 
 st.title('ThinkTankers ML App')
 
@@ -55,8 +57,8 @@ with st.expander('Input features'):
 encode = ['island', 'sex'] #combine island and island name pastu classify 0 or 1 for each particular name
 df_penguins = pd.get_dummies(input_penguins, prefix=encode)
 
-X = df_penguins[1:]
-input_row = df_penguins[:1]
+X = df_penguins[1:] #ignore first row but use everything after first row
+input_row = df_penguins[:1] #use only first row
 
 # Encode y
 target_mapper = {'Adelie': 0,
@@ -79,11 +81,11 @@ with st.expander('Data preparation'):
 # Model training and inference
 ## Train the ML model
 clf = RandomForestClassifier()
-clf.fit(X, y)
+clf.fit(x, y) #use fit function to train it
 
 ## Apply model to make predictions
-prediction = clf.predict(input_row)
-prediction_proba = clf.predict_proba(input_row)
+prediction = clf.predict(input_row) #predict value, input_row is input features
+prediction_proba = clf.predict_proba(input_row) #do probability
 
 df_prediction_proba = pd.DataFrame(prediction_proba)
 df_prediction_proba.columns = ['Adelie', 'Chinstrap', 'Gentoo']
